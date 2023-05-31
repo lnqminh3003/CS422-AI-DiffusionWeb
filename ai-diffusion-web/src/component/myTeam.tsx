@@ -10,7 +10,7 @@ export default function MyTeam() {
         <div className=" hidden md:flex flex-col justify-evenly h-screen">
                 <div className = "flex flex-col pt-36 items-center">
                     <div className ="flex flex-row space-x-2 mb-4">
-                        <img src="https://arbmarvel.ai/icons/ic-collection.svg"></img>
+                        <img  alt="" src="https://arbmarvel.ai/icons/ic-collection.svg"></img>
                         <p className="text-white 2xl:text-lg md:text-base font-semibold">Stable Diffusion</p>
                     </div>
                     <p className="text-textVang mb-8 text-6xl font-bold" >

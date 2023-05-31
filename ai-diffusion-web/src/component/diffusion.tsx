@@ -19,9 +19,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
+interface DataType {
+  output: string,
+  status:string
+}
 export default function Diffusion() {
 
-  const[prediction,setPrediction] =useState<any[]>([]);
+  const[prediction,setPrediction] =useState<DataType>();
   const[error, setError] = useState(null)
   const[loading,setLoading] = useState(false)
   const[anh,setAnh] = useState(false)
@@ -78,6 +82,7 @@ export default function Diffusion() {
   }
 
   const SaveImage =()=>{
+    if(prediction == null) return
     var id = getRandomInt(1,10000)
     set(ref(db, 'users/' + localStorage.getItem("account") + '/' + id), {
       image : prediction.output[0]
