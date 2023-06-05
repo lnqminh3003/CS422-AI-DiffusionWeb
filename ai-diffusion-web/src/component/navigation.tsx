@@ -18,7 +18,6 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    localStorage.removeItem("account");
     if(localStorage.getItem("account") != null)
     {
       setDefaultAccount(localStorage.getItem("account")!);
@@ -107,6 +106,13 @@ const Navigation = () => {
                         md:p-0 text-[color:white] font-semibold"
               >
                 My Collections
+              </Link>
+              <Link
+                href={{ pathname: "../account" }}
+                className="block py-2  hover:text-white 
+                        md:p-0 text-[color:white] font-semibold"
+              >
+                My Profile
               </Link>
             </div>
           </div>

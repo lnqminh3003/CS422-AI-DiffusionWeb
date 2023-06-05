@@ -110,7 +110,7 @@ export default function Diffusion() {
     <div   className="w-full min-h-screen bg-cover bg-center pb-20 bg-no-repeat bg-mybg">
     <div className="flex min-h-screen flex-col items-center py-2">
         <p className="text-textVang mb-8 text-5xl mt-36 font-bold" >
-                        INPUT YOUR KEY TO GENERATE AI IMAGE
+                        INPUT YOUR PROMPT TO GENERATE AI IMAGE
         </p>
      <main className="flex w-full flex-col justify-center px-20 text-center">
         <form className="flex flex-col w-full gap-4" onSubmit={handleSubmit}>
@@ -120,12 +120,12 @@ export default function Diffusion() {
             </div>
 
             <div className="flex flex-col items-start mt-4">
-                <label className="text-textVang font-bold text-2xl mb-2" htmlFor="seed">Seed</label>
+                <label className="text-textVang font-bold text-2xl mb-2" htmlFor="seed">Seed (recommend: 123123)</label>
                 <input name="seed" type="number" className="border border-gray-600 rounded-lg p-2 outline-none" />
             </div>
 
             <div className="flex flex-col items-start mt-4">
-                <label className="text-textVang font-bold text-2xl mb-2" htmlFor="guidanceScale">Guidance Scale</label>
+                <label className="text-textVang font-bold text-2xl mb-2" htmlFor="guidanceScale">Guidance Scale (recommend: 6)</label>
                 <input name="guidanceScale" type="number" className="border border-gray-600  rounded-lg p-2 outline-none" />
             </div>
             <button  className="items-center bg-textVang text-black font-semibold w-36 mt-4 rounded-lg p-2">Generate</button>
