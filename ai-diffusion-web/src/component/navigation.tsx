@@ -7,6 +7,7 @@ declare let window: any;
 const Navigation = () => {
   const [openNav, setOpenNav] = useState(false);
   const [defaultAccount, setDefaultAccount] = useState("");
+  const [popupInstall ,  setPopupInstall] =  useState(false)
 
   const toggleNav = () => {
     if (openNav) {
@@ -17,7 +18,11 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    ConnectToMetamask()
+    localStorage.removeItem("account");
+    if(localStorage.getItem("account") != null)
+    {
+      setDefaultAccount(localStorage.getItem("account")!);
+    }
   }, []);
   
 
@@ -32,6 +37,7 @@ const Navigation = () => {
         });
     } else {
       console.log("Install Metamask");
+      setPopupInstall(true)
     }
   };
 
@@ -47,7 +53,7 @@ const Navigation = () => {
       <nav className="bg-gray-900 fixed top-0 right-0 left-0 border-gray-200 px-2 sm:px-4 py-4 z-20">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link
-            href=""
+            href="https://cs-422-ai-diffusion-web.vercel.app"
             className="flex items-center"
           >
             <div className="font-bold text-textVang text-3xl">CS422</div>
@@ -140,6 +146,41 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
+      {
+        popupInstall && 
+          <div className="grid place-items-center bg-neutral-700 bg-opacity-40 fixed top-0 left-0 right-0 z-50 w-full p-4 overflw-x-hidden overflow-y-auto md:inset-0 h-modal min-h-screen">
+              <div className="relative bg-white rounded-lg shadow w-72 md:w-96 grid place-items-center">
+                <div className="flex items-start p-4 border-b rounded-t dark:border-gray-600">
+                  <img
+                    src="https://cdn0.iconfinder.com/data/icons/shift-interfaces/32/Error-512.png"
+                    className="p-1 rounded h-11 w-11"
+                    alt="..."
+                  />
+                </div>
+                <div className="p-6 space-y-6">
+                  <p className="font-semibold text-base leading-relaxed">
+                  PLEASE INSTALL METAMASK WALLET
+                  </p>
+                </div>
+                <div className="flex flex-row items-center p-6 space-x-2  rounded-b dark:border-gray-600">
+                  <button onClick={()=>{setPopupInstall(false)}}
+                    data-modal-toggle="defaultModal"
+                    type="button"
+                    className="text-white bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Skip
+                  </button>
+                  <Link 
+                   href="https://metamask.io/download/"
+                    data-modal-toggle="defaultModal"
+                    className="text-white bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Install
+                  </Link>
+                </div>
+              </div>
+          </div>
+      }
     </div>
   );
 };

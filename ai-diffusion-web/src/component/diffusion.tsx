@@ -186,7 +186,7 @@ export default function Diffusion() {
       )}
 
        {doneSave && 
-                <div className="grid place-items-center bg-neutral-700 bg-opacity-40 fixed top-0 left-0 right-0 z-50 w-full p-4 overflw-x-hidden overflow-y-auto md:inset-0 h-modal min-h-screen">
+              <div className="grid place-items-center bg-neutral-700 bg-opacity-40 fixed top-0 left-0 right-0 z-50 w-full p-4 overflw-x-hidden overflow-y-auto md:inset-0 h-modal min-h-screen">
                 <div className="relative bg-white rounded-lg shadow w-72 md:w-96 grid place-items-center">
                   <div className="flex items-start p-4 border-b rounded-t dark:border-gray-600">
                     <img
