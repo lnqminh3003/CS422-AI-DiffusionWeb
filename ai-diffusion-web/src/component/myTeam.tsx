@@ -6,7 +6,7 @@ import luong from "../../public/326725998_1588728878294566_1715138173458336479_n
 
 export default function MyTeam() {
   return (
-    <div   className="w-full min-h-screen bg-cover bg-center pb-20 bg-no-repeat bg-mybg">
+    <div   className="w-full min-h-screen bg-cover bg-center pb-56 bg-no-repeat bg-mybg">
         <div className=" hidden md:flex flex-col justify-evenly h-screen">
                 <div className = "flex flex-col pt-36 items-center">
                     <div className ="flex flex-row space-x-2 mb-4">

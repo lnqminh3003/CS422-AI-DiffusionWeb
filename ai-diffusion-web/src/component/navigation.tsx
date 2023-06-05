@@ -112,7 +112,7 @@ const Navigation = () => {
                 className="block py-2  hover:text-white 
                         md:p-0 text-[color:white] font-semibold"
               >
-                My Profile
+                Edit Profile
               </Link>
             </div>
           </div>

@@ -18,9 +18,45 @@ const db = getDatabase();
 
 export default function Collection() {
   const[pn, setPn] = useState([{}])
+  const [nameUser, setName] =useState("")
+  const [ava, setAva] =useState("")
+  const [defaultAccount, setDefaultAccount] = useState("");
+  
   
   useEffect(() => {
-    get(child(ref_database(db), 'users/' + localStorage.getItem("account"))).then((snapshot) => {
+    if(localStorage.getItem("account") != null)
+    {
+      setDefaultAccount(localStorage.getItem("account")!);
+    }
+    else{
+      setDefaultAccount("NO ACCOUNT")
+    }
+
+    get(child(ref_database(db), 'users/' + localStorage.getItem("account") +'/name' )).then((snapshot) => {
+      if (snapshot.exists()) {
+          setName(snapshot.val())
+          console.log(pn)
+      } else {
+        console.log("No data available");
+        setPn([])
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+    get(child(ref_database(db), 'users/' + localStorage.getItem("account") +'/urlImage' )).then((snapshot) => {
+      if (snapshot.exists()) {
+          setAva(snapshot.val())
+          console.log(pn)
+      } else {
+        console.log("No data available");
+        setPn([])
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+    get(child(ref_database(db), 'users/' + localStorage.getItem("account") +'/images' )).then((snapshot) => {
         if (snapshot.exists()) {
             setPn(Object.values(snapshot.val()))
             console.log(pn)
@@ -41,6 +77,21 @@ export default function Collection() {
         <div className="flex  flex-col items-center py-2 mb-12">
           <p className="text-textVang mb-8 text-5xl mt-36 font-bold" >
                           MY COLLECTIONS
+          </p>
+          <div>
+            <img className="w-36 h-36 object-cover rounded-full border-4 border-yellow-300" src={ava} alt={'aaa'} />
+          </div>
+          <p className="text-textVang mb-2 text-xl mt-8 font-semibold" >
+                        My Account ID
+          </p>
+          <p className="text-white mb-4 text-base " >
+                        {defaultAccount}
+          </p>
+          <p className="text-textVang mb-2 text-xl mt-2 font-semibold" >
+                        My Name
+          </p>
+          <p className="text-white mb-8 text-3xl font-bold " >
+                        {nameUser}
           </p>
         </div>
         <div id="all" className=" ml-8 grid grid-cols-4 gap-4 content-center">

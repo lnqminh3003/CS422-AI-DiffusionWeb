@@ -93,7 +93,7 @@ export default function Diffusion() {
     {
         if(prediction == null) return
         var id = getRandomInt(1,10000)
-        set(ref(db, 'users/' + localStorage.getItem("account") + '/' + id), {
+        set(ref(db, 'users/' + localStorage.getItem("account") + '/images'+ '/' + id), {
           image : prediction.output[0]
         })
         .then(()=>{
