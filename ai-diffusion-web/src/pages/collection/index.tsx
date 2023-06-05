@@ -1,4 +1,3 @@
-import CardNFTCreated from "@/component/card";
 import Navigation from "@/component/navigation";
 import { useEffect, useState } from "react";
 

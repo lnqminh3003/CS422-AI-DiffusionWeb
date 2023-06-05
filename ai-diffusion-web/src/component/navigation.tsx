@@ -46,12 +46,12 @@ const Navigation = () => {
     <div>
       <nav className="bg-gray-900 fixed top-0 right-0 left-0 border-gray-200 px-2 sm:px-4 py-4 z-20">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a
+          <Link
             href=""
             className="flex items-center"
           >
             <div className="font-bold text-textVang text-3xl">CS422</div>
-          </a>
+          </Link>
           <button
             onClick={toggleNav}
             data-collapse-toggle="navbar-default"
@@ -79,13 +79,13 @@ const Navigation = () => {
 
           <div className=" hidden md:block w-full md:w-auto">
             <div className="flex flex-row md:p-4 mt-2 rounded-lg md:space-x-12 md:mt-0 md:text-sm md:font-medium md:border-0 ">
-              <a
+              <Link
                 href="/"
                 className=" py-2 hover:text-white 
                         md:p-0 text-[color:white] font-semibold"
               >
                 Home
-              </a>
+              </Link>
 
               <Link
                 href={{ pathname: "../AI" }}
