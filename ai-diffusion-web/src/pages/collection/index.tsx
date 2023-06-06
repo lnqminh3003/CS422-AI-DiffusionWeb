@@ -96,12 +96,13 @@ export default function Collection() {
         </div>
         <div id="all" className=" ml-8 grid grid-cols-4 gap-4 content-center">
           {pn.map((a: any) => (
-                <img
-                key={a.image}
-                  src={a.image}
-                  alt=""
-                  className=" w-60 h-60 object-cover rounded-3xl items-center"
-                />
+                <button key={a.image} onClick={()=>{console.log("aaaa")}}>
+                  <img
+                    src={a.image}
+                    alt=""
+                    className=" w-60 h-60 object-cover rounded-3xl items-center"
+                  />
+                </button>
           ))}
         </div>
       </div>
