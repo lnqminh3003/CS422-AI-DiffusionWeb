@@ -211,7 +211,7 @@ export default function Collection() {
 
             
             {success && 
-                <div className="grid place-items-center bg-neutral-700 bg-opacity-40 fixed top-0 left-0 right-0 z-50 w-full p-4 overflw-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                <div className="grid place-items-center bg-neutral-700 bg-opacity-40 fixed top-0 left-0 right-0 z-50 w-full p-4 overflw-x-hidden overflow-y-auto md:inset-0 h-modal min-h-screen">
                 <div className="relative bg-white rounded-lg shadow w-72 md:w-96 grid place-items-center">
                   <div className="flex items-start p-4 border-b rounded-t dark:border-gray-600">
                     <img
@@ -223,16 +223,16 @@ export default function Collection() {
                       Upload 
                     </h3>
                   </div>
-                  <div className="p-6 space-y-6">
-                    <p className="font-semibold text-base leading-relaxed">
+                  <div className="mt-4 space-y-6">
+                    <p className="font-medium text-base leading-relaxed">
                       SUCCESSFUL
                     </p>
                   </div>
                   <div className="flex items-center p-6 space-x-2  rounded-b dark:border-gray-600">
-                    <button onClick={()=>setSuccess(false)}
+                    <button onClick={()=>{setSuccess(false)}}
                       data-modal-toggle="defaultModal"
                       type="button"
-                      className="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="text-black border-black border font-medium  text-sm px-5 py-2.5 text-center"
                     >
                       Thank you
                     </button>
@@ -250,7 +250,7 @@ export default function Collection() {
                     </h3>
                   </div>
                   <div className="p-6 space-y-6">
-                    <p className="font-semibold text-base leading-relaxed">
+                    <p className="font-medium text-base leading-relaxed">
                       LOADING...
                     </p>
                   </div>
@@ -273,8 +273,8 @@ export default function Collection() {
                     alt="..."
                   />
                 </div>
-                <div className="p-6 space-y-6">
-                  <p className="font-semibold text-base leading-relaxed">
+                <div className=" space-y-6">
+                  <p className="font-medium text-base leading-relaxed">
                   PLEASE INSTALL METAMASK WALLET
                   </p>
                 </div>
@@ -282,14 +282,14 @@ export default function Collection() {
                   <button onClick={()=>{setPopupInstall(false)}}
                     data-modal-toggle="defaultModal"
                     type="button"
-                    className="text-white bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="text-black  hover:bg-textVang border-black border font-medium  text-sm px-5 py-2.5 text-center"
                   >
                     Skip
                   </button>
                   <Link 
                    href="https://metamask.io/download/"
                     data-modal-toggle="defaultModal"
-                    className="text-white bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="text-black  hover:bg-textVang border-black border font-medium  text-sm px-5 py-2.5 text-center"
                   >
                     Install
                   </Link>

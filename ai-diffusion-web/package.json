@@ -14,6 +14,7 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "file-saver": "^2.0.5",
     "firebase": "^9.22.1",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.6",
@@ -25,6 +26,7 @@
     "web3": "^1.10.0"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
